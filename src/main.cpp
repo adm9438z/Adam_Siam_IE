@@ -16,6 +16,8 @@ void setup() {
   pinMode(2,INPUT_PULLUP);
   pinMode(12,INPUT_PULLUP);
 
+  ledcAttachPin(27,0);
+  ledcSetup(0,25000,8);
 }
 
 void loop() {
@@ -34,5 +36,8 @@ void loop() {
   lcd.printf("bp2 = %d ",bp2);
   lcd.printf("pot = %d",pot); 
   
+ledcWrite(0,pot/2);
+
+
 return;
 }
